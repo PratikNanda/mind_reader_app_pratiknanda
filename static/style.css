@@ -226,4 +226,89 @@ footer {
     pointer-events: none;        /* so it never blocks clicks */
     z-index: 9999;
 }
+/* ========================= */
+/*    Responsive tweaks      */
+/* ========================= */
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 16px 12px 28px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .card {
+        padding: 14px 14px;
+        margin-bottom: 12px;
+    }
+
+    .instruction-list,
+    .lead {
+        font-size: 13px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .controls.center {
+        align-items: stretch;
+    }
+
+    .btn,
+    .btn-large {
+        width: 100%;
+        text-align: center;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    footer {
+        margin-top: 16px;
+        font-size: 11px;
+    }
+
+    .watermark {
+        font-size: 10px;
+        right: 6px;
+        bottom: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Board table on very small screens */
+    .board-wrapper {
+        margin-top: 4px;
+    }
+
+    .board-table {
+        font-size: 9px;
+    }
+
+    .board-table td {
+        padding: 3px 1px;
+    }
+
+    .number {
+        font-size: 9px;
+    }
+
+    .emoji {
+        font-size: 14px;
+    }
+
+    .big-emoji {
+        font-size: 44px;
+    }
+}
 
