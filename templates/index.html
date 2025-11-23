@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mind Reader Game 🧠</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>🧠 Mind Reader Game</h1>
+    <p class="subtitle">
+        A quick little illusion with numbers and emojis. Just follow the steps in your head.
+    </p>
+
+    <div class="card instructions">
+        <h2>How to Play</h2>
+
+        <p class="lead">
+            You don’t need to type anything. Just think of a number and do the steps silently.
+        </p>
+
+        <ol class="instruction-list">
+            <li>
+                Choose any <strong>2-digit</strong> number in your mind  
+                (for example, <strong>42</strong>).
+            </li>
+            <li>
+                Reverse the digits  
+                (for example, <strong>24</strong>).
+            </li>
+            <li>
+                Subtract the smaller number from the bigger number  
+                (for example, <strong>42 − 24 = 18</strong>).
+            </li>
+            <li>
+                Remember the result. <strong>Keep it in your mind only.</strong>
+            </li>
+            <li>
+                On the next screen, find your result in the table and focus on its emoji.
+            </li>
+        </ol>
+
+        <p class="hint">
+            When you’re ready, click the button below to open the emoji table.
+        </p>
+    </div>
+
+    <div class="controls center">
+        <a href="{{ url_for('board') }}" class="btn primary btn-large">
+            ➡️ Show Emoji Table
+        </a>
+    </div>
+
+    <footer>
+        <p>Mind Reader Game • Just for fun 🎉</p>
+    </footer>
+</div>
+<div class="watermark">© Pratik • Mind Reader</div>
+</body>
+</html>
