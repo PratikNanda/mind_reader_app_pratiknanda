@@ -3,48 +3,69 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background: #0f172a;
     color: #e5e7eb;
+    font-size: 15px; /* base increase */
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px; /* wider for large screens */
     margin: 0 auto;
-    padding: 24px 16px 40px;
+    padding: 28px 20px 44px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 22px;
 }
 
 .subtitle {
     text-align: center;
     color: #9ca3af;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    font-size: 16px;
 }
 
 .card {
     background: #020617;
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 16px;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     border: 1px solid #1f2937;
 }
 
-.instructions ol {
-    padding-left: 20px;
+/* ---------------- INDEX PAGE ---------------- */
+
+.instruction-list {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.instruction-list li {
+    margin-bottom: 14px;
+}
+
+.lead {
+    font-size: 16px;
+    margin-bottom: 16px;
 }
 
 .hint {
-    margin-top: 8px;
+    margin-top: 10px;
     color: #9ca3af;
-    font-size: 14px;
+    font-size: 15px;
 }
+
+/* ---------------- BUTTONS ---------------- */
 
 .controls {
     display: flex;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 14px;
+    margin-bottom: 20px;
 }
 
 .controls.center {
@@ -53,13 +74,13 @@ h1 {
 
 .btn {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 999px;
     border: none;
     text-decoration: none;
     font-weight: 600;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 .btn.primary {
@@ -77,27 +98,33 @@ h1 {
     opacity: 0.9;
 }
 
-.board h2 {
-    margin-bottom: 8px;
+.btn-large {
+    font-size: 16px;
+    padding: 12px 30px;
 }
 
-/* 10x10 table tuned to fit on screen */
+/* ---------------- BOARD PAGE ---------------- */
+
+.board h2 {
+    margin-bottom: 10px;
+}
+
 .board-wrapper {
     overflow-x: auto;
-    margin-top: 8px;
+    margin-top: 16px;
 }
 
 .board-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    font-size: 11px; /* smaller to fit 10x10 nicely */
+    font-size: 15px;
 }
 
 .board-table td {
     border: 1px solid #1f2937;
     text-align: center;
-    padding: 4px 2px;
+    padding: 10px 6px;
     background: #030712;
 }
 
@@ -105,41 +132,62 @@ h1 {
     display: block;
     font-weight: 600;
     color: #9ca3af;
-    margin-bottom: 2px;
-    font-size: 11px;
+    margin-bottom: 6px;
+    font-size: 14px;
 }
 
 .emoji {
-    font-size: 18px;
+    font-size: 26px;
 }
+
+/* ---------------- RESULT PAGE ---------------- */
 
 .reveal {
     text-align: center;
 }
 
 .big-emoji {
-    font-size: 100px;
-    margin: 10px 0 4px;
+    font-size: 170px; /* BIG impact */
+    margin: 18px 0 8px;
 }
+
+.small-label {
+    font-size: 15px;
+    color: #9ca3af;
+    margin-bottom: 6px;
+}
+
+/* ---------------- FOOTER & WATERMARK ---------------- */
 
 footer {
     text-align: center;
-    margin-top: 20px;
-    font-size: 12px;
+    margin-top: 22px;
+    font-size: 13px;
     color: #6b7280;
 }
+
+.watermark {
+    position: fixed;
+    right: 12px;
+    bottom: 10px;
+    font-size: 12px;
+    color: #9ca3af;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ---------------- ANIMATION ---------------- */
 
 .hidden {
     display: none;
 }
 
-/* Mind-reading animation */
-
 .mind-orbit {
     position: relative;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 12px auto;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 14px auto;
 }
 
 .orbit-center {
@@ -148,7 +196,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 34px;
+    font-size: 40px;
 }
 
 .orbit-circle {
@@ -160,7 +208,7 @@ footer {
 }
 
 .orbit-circle-delay {
-    inset: 10px;
+    inset: 12px;
     animation-duration: 3s;
     animation-direction: reverse;
 }
@@ -171,16 +219,14 @@ footer {
     }
 }
 
-/* Roleplay text + dots */
-
 .reading-line {
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 15px;
+    margin-bottom: 10px;
     color: #e5e7eb;
 }
 
 .thinking-dots {
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: 4px;
     color: #9ca3af;
 }
@@ -199,36 +245,11 @@ footer {
 }
 
 @keyframes blink {
-    0%, 100% {
-        opacity: 0.2;
-    }
-    40% {
-        opacity: 1;
-    }
+    0%, 100% { opacity: 0.2; }
+    40% { opacity: 1; }
 }
 
-/* Small label above result */
-
-.small-label {
-    font-size: 13px;
-    color: #9ca3af;
-    margin-bottom: 4px;
-}
-
-/* Watermark */
-.watermark {
-    position: fixed;
-    right: 10px;
-    bottom: 8px;
-    font-size: 11px;
-    color: #9ca3af;
-    opacity: 0.4;
-    pointer-events: none;        /* so it never blocks clicks */
-    z-index: 9999;
-}
-/* ========================= */
-/*    Responsive tweaks      */
-/* ========================= */
+/* ---------------- MOBILE (UNCHANGED BEHAVIOR) ---------------- */
 
 @media (max-width: 768px) {
     .container {
@@ -246,7 +267,7 @@ footer {
     }
 
     .card {
-        padding: 14px 14px;
+        padding: 14px;
         margin-bottom: 12px;
     }
 
@@ -261,54 +282,17 @@ footer {
         gap: 8px;
     }
 
-    .controls.center {
-        align-items: stretch;
-    }
-
     .btn,
     .btn-large {
         width: 100%;
-        text-align: center;
-        padding: 10px 14px;
         font-size: 14px;
-    }
-
-    footer {
-        margin-top: 16px;
-        font-size: 11px;
-    }
-
-    .watermark {
-        font-size: 10px;
-        right: 6px;
-        bottom: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Board table on very small screens */
-    .board-wrapper {
-        margin-top: 4px;
-    }
-
-    .board-table {
-        font-size: 9px;
-    }
-
-    .board-table td {
-        padding: 3px 1px;
-    }
-
-    .number {
-        font-size: 9px;
     }
 
     .emoji {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .big-emoji {
         font-size: 44px;
     }
 }
-
